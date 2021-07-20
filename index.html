@@ -368,7 +368,7 @@
             + props.Pais + '</b><br />' + '<div ALIGN="LEFT">'
             + '<p span style = "font-weight:bold; color: #c62121"</p>'
             + String(props[globalTimestamp])
-            + '<span style="font-weight:normal; color:black"</span> hab./km2</font>'
+            + '<span style="font-weight:normal; color:black"</span> </font>'
             + '</b><br />' : 'Selecione um país');
 
     };
@@ -377,10 +377,10 @@
 
     // get color depending on population density value
     function getColor(d) {
-       return d > 32 ? '#08519c' :
-					d > 27 ? '#3182bd':
-						d > 25 ? '#6baed6' :
-							d > 23 ? '#bdd7e7' :
+       return d > 28 ? '#08519c' :
+					d > 25 ? '#3182bd':
+						d > 21 ? '#6baed6' :
+							d > 11 ? '#bdd7e7' :
 								d > 1 ? '#e5ecff' :
 									d = 0 ? '#f5f5f5' :
 										'#f5f5f5';
@@ -443,12 +443,12 @@
 
 
             var div = L.DomUtil.create('div', 'info legend'),
-                grades = [0, 20, 23, 25, 27, 32 ],
-                labels = ['Sem dados','0-20', '21-23', '24-25', '26-27', '28-32'],
+                grades = [0, 10, 20, 24, 27, 32 ],
+                labels = ['Sem dados','0-10', '11-20', '21-24', '25-27', '28-32'],
                 from, to;
 
 
-            div.innerHTML = '<FONT SIZE=2 style = "font-family:verdana"><b>Indice de dependência <br> (nº)<span>  <span class="brsmall"></span> '; // Títulos da legenda
+            div.innerHTML = '<FONT SIZE=2 style = "font-family:verdana"><b>Índice de dependência <br> <span>  <span class="brsmall"></span> '; // Títulos da legenda
 
             for (var i = 0; i < grades.length; i++) {
                 div.innerHTML +=
